@@ -1,6 +1,14 @@
 const express = require('express');
 const app = express();
 
-app.listen(3000, function() {
-    console.log('listening on 3000')
+const connectDB = require("./server/Database/connection")
+
+//get env file configarations
+require('dotenv').config();
+
+//connect mongoDB 
+connectDB();
+
+app.listen(5000, function() {
+    console.log('listening on 5000')
   })
